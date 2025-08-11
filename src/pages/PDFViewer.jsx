@@ -9,9 +9,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const PDFViewer = () => {
   const shareText = encodeURIComponent(
-    "If these words moved you, share this preview of The Infinite Enterprise with your friends."
+    "Share this glimpse of The Infinite Enterprise with someone who needs to see it."
   );
-  const shareUrl = "https://yourwebsite.com/read"; // Replace with your actual preview page URL
+  const shareUrl = "https://the-infinite-enterprise.vercel.app/read"; // Replace with your actual preview page URL
 
   // Sharing URLs for different platforms
   const whatsappLink = `https://wa.me/?text=${shareText}%20${encodeURIComponent(shareUrl)}`;
