@@ -86,7 +86,7 @@ const ImpactSection = () => {
     textTransform: 'none',
   }}
     component={RouterLink}
-            to="/review"
+            to="/read"
 >
   Start Reading
 </Button>
