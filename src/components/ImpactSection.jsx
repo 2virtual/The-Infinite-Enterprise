@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 import { Box, Typography, Button, Container } from '@mui/material';
 
@@ -84,6 +85,8 @@ const ImpactSection = () => {
     fontWeight: 600,
     textTransform: 'none',
   }}
+    component={RouterLink}
+            to="/review"
 >
   Start Reading
 </Button>
