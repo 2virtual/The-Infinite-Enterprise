@@ -9,7 +9,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const PDFViewer = () => {
   const shareText = encodeURIComponent(
-    "Share this glimpse of The Infinite Enterprise with someone who needs to see it."
+    "Just finished a sneak peek of this powerful book on timeless principles for building businesses that thrive in an AI-driven world. Thought you’d find it inspiring — take a look!"
   );
   const shareUrl = "https://the-infinite-enterprise.vercel.app/read"; // Replace with your actual preview page URL
 
