@@ -1,7 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './index.css';
 import App from './App.jsx';
@@ -13,18 +12,7 @@ import PaymentPage from './pages/paymentPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<App />} />
-          <Route path="/read" element={<PDFViewer />} />
-          <Route path="/about-author" element={<AboutAuthor />} />
-          <Route path="/review" element={<ReviewForm />} />
-          <Route path="/order" element={<PaymentPage />} />
-        </Route>
-      </Routes>
-    </HashRouter>
-    {/* <BrowserRouter>
+    <BrowserRouter>
       <Routes>
       <Route path="/" element={<Layout />}>
 
@@ -35,7 +23,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/order" element={<PaymentPage />} /> 
         </Route>
       </Routes>
-    </BrowserRouter> */}
+    </BrowserRouter>
   </StrictMode>
 );
 
