@@ -1,7 +1,7 @@
 import { Box, Typography, Grid } from '@mui/material';
 
 const books = [
-  { title: 'The Infinite Enterprise (Main Book)', img: 'https://res.cloudinary.com/dphiclnsc/image/upload/v1755267517/tnt3_2_eojzyz.jpg' },
+  { title: 'The Infinite Enterprise (Main Book)', img: 'https://res.cloudinary.com/dphiclnsc/image/upload/v1755272387/book_cover_2_fhc7x3.png' },
   { title: 'The Infinite Enterprise Workbook', img: 'https://res.cloudinary.com/dphiclnsc/image/upload/v1754723593/openart-image_30vcfTnh_1754723434638_raw_ysembz.jpg' },
 ];
 
