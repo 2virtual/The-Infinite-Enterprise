@@ -59,7 +59,7 @@ const HeroBanner = () => {
         >
           <Box
             component="img"
-            src="https://res.cloudinary.com/dphiclnsc/image/upload/v1754721659/openart-image_yDio7nlF_1754721049486_raw_sgmu5m.jpg"
+            src="https://res.cloudinary.com/dphiclnsc/image/upload/v1755267517/tnt3_2_eojzyz.jpg"
             alt="Book Cover"
             sx={{
               maxWidth: { xs: "70%", md: 320 },
