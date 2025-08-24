@@ -73,7 +73,25 @@ const ImpactSection = () => {
           move without you, and echo beyond your lifetime.
         </Typography> */}
 
-        <Button
+<Button
+  variant="contained"
+  color="primary"
+  size="large"
+  href="/book-preview.html"
+  target="_blank"  // Opens in new tab (recommended for static HTML)
+  rel="noopener noreferrer"
+  sx={{
+    px: 5,
+    py: 1.5,
+    borderRadius: '999px',
+    fontWeight: 600,
+    textTransform: 'none',
+  }}
+>
+  Read Free Preview
+</Button>
+
+        {/* <Button
   variant="contained"
   color="primary"
   size="large"
@@ -89,7 +107,7 @@ const ImpactSection = () => {
             to="/read"
 >
   Start Reading
-</Button>
+</Button> */}
 
       </Container>
     </Box>
