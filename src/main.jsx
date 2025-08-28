@@ -9,6 +9,7 @@ import AboutAuthor from './pages/authorsPage.jsx';
 import Layout from './components/nav-layout.jsx'; 
 import ReviewForm  from './pages/ReviewForm.jsx'; 
 import PaymentPage from './pages/paymentPage.jsx';
+import QuotesPage from './components/QuotesPage';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/about-author" element={<AboutAuthor />} /> 
         <Route path="/review" element={<ReviewForm />} /> 
         <Route path="/order" element={<PaymentPage />} /> 
+        <Route path="/infinite-enterprise/quotes" element={<QuotesPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
