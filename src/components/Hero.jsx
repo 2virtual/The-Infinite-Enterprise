@@ -20,7 +20,7 @@ const HeroBanner = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: { xs: "scroll", md: "fixed" },
-        minHeight: { xs: "70vh", md: "80vh" },
+        minHeight: { xs: "50vh", md: "55vh" },
         py: { xs: 8, md: 12 },
         px: 3,
         color: "#fff",
