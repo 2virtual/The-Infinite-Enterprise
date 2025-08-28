@@ -27,7 +27,7 @@ const QuotesPage = () => {
   const [snackbar, setSnackbar] = useState({ open: false, message: '' });
 
   // 🔗 Replace with your actual website URL
-  const websiteUrl = 'http://localhost:5173/infinite-enterprise/quotes';
+  const websiteUrl = 'https://the-infinite-enterprise.vercel.app/infinite-enterprise/quotes';
   const bookTitle = 'The Infinite Enterprise';
 
   const quotes = [
