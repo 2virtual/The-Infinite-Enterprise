@@ -19,15 +19,17 @@ import {
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/PhotoCamera';
-import DiscordIcon from './icons/DiscordIcon'; // Create this (code below)
+import DiscordIcon from './icons/DiscordIcon';
+import DownloadIcon from '@mui/icons-material/Download';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+// Utility
+import { generateQuoteImage } from '../utils/generateQuoteImage';
 
 const QuotesPage = () => {
   const [snackbar, setSnackbar] = useState({ open: false, message: '' });
 
-  // 🔗 Replace with your actual website URL
-  const websiteUrl = 'https://the-infinite-enterprise.vercel.app/infinite-enterprise/quotes';
+  const websiteUrl = 'https://the-infinite-enterprise.vercel.app/infinite-enterprise/quotes'; // 🔗 Change to your URL
   const bookTitle = 'The Infinite Enterprise';
 
   const quotes = [
@@ -51,38 +53,28 @@ const QuotesPage = () => {
     let shareUrl = '';
 
     switch (platform) {
-      // ✅ X (Twitter)
       case 'twitter':
         const twitterText = encodeURIComponent(`${fullQuote}\n\n${websiteUrl}`);
         shareUrl = `https://twitter.com/intent/tweet?text=${twitterText}`;
         window.open(shareUrl, '_blank', 'noopener,noreferrer');
         break;
 
-      // ✅ Facebook
       case 'facebook':
         const facebookQuote = encodeURIComponent(fullQuote);
         shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${facebookQuote}`;
         window.open(shareUrl, '_blank', 'noopener,noreferrer');
         break;
 
-      // ✅ LinkedIn
       case 'linkedin':
-        const linkedInTitle = encodeURIComponent(`${fullQuote}`);
+        const linkedInTitle = encodeURIComponent(fullQuote);
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}&title=${linkedInTitle}`;
         window.open(shareUrl, '_blank', 'noopener,noreferrer');
         break;
 
-      // ✅ Instagram (Copy only)
-      case 'instagram':
-        copyToClipboard(textToCopy, 'Quote copied! Paste into Instagram.');
-        break;
-
-      // ✅ Discord (Copy only)
       case 'discord':
         copyToClipboard(textToCopy, 'Quote copied! Paste into Discord.');
         break;
 
-      // ✅ Copy Link
       case 'copy':
         copyToClipboard(textToCopy, 'Quote + link copied to clipboard!');
         break;
@@ -92,13 +84,11 @@ const QuotesPage = () => {
     }
   };
 
-  // ✅ Universal clipboard copy with fallback
   const copyToClipboard = async (text, successMsg) => {
     try {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(text);
       } else {
-        // Fallback for older browsers
         const textArea = document.createElement('textarea');
         textArea.value = text;
         textArea.style.position = 'fixed';
@@ -111,8 +101,16 @@ const QuotesPage = () => {
       }
       setSnackbar({ open: true, message: successMsg });
     } catch (err) {
-      setSnackbar({ open: true, message: 'Failed to copy. Please try again.' });
+      setSnackbar({ open: true, message: 'Failed to copy.' });
     }
+  };
+
+  const handleDownloadImage = (quote, category) => {
+    generateQuoteImage(quote, `ie-quote-${category.toLowerCase()}`);
+    setSnackbar({
+      open: true,
+      message: 'Instagram image downloaded! Ready to post.'
+    });
   };
 
   const handleCloseSnackbar = () => {
@@ -160,7 +158,7 @@ const QuotesPage = () => {
               </CardContent>
 
               <CardActions sx={{ justifyContent: 'space-around', p: 2 }}>
-                {/* X (Twitter) */}
+                {/* X */}
                 <Tooltip title="Share on X">
                   <IconButton
                     onClick={() => shareQuote(quote.text, 'twitter')}
@@ -190,15 +188,6 @@ const QuotesPage = () => {
                   </IconButton>
                 </Tooltip>
 
-                {/* Instagram */}
-                <Tooltip title="Copy for Instagram">
-                  <IconButton
-                    onClick={() => shareQuote(quote.text, 'instagram')}
-                  >
-                    <InstagramIcon />
-                  </IconButton>
-                </Tooltip>
-
                 {/* Discord */}
                 <Tooltip title="Copy for Discord">
                   <IconButton
@@ -208,20 +197,30 @@ const QuotesPage = () => {
                     <DiscordIcon />
                   </IconButton>
                 </Tooltip>
+
+                {/* Download for Instagram */}
+                <Tooltip title="Download image for Instagram">
+                  <IconButton
+                    onClick={() => handleDownloadImage(quote.text, quote.category)}
+                    sx={{ color: '#C13584' }} // Instagram gradient color
+                  >
+                    <DownloadIcon />
+                  </IconButton>
+                </Tooltip>
               </CardActions>
             </Card>
           </Grid>
         ))}
       </Grid>
 
-      {/* Success/Error Feedback */}
+      {/* Success Snackbar */}
       <Snackbar
         open={snackbar.open}
         autoHideDuration={4000}
         onClose={handleCloseSnackbar}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       >
-        <Alert onClose={handleCloseSnackbar} severity="info" sx={{ width: '100%' }}>
+        <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
           {snackbar.message}
         </Alert>
       </Snackbar>
