@@ -20,7 +20,7 @@ const Layout = () => {
     <>
       <MenuItem component={RouterLink} to="/" onClick={handleMenuClose}>Home</MenuItem>
       <MenuItem component={RouterLink} to="/about-author" onClick={handleMenuClose}>Author</MenuItem>
-      <MenuItem component={RouterLink} to="/license" onClick={handleMenuClose}>Print License</MenuItem>
+      <MenuItem component={RouterLink} to="/community" onClick={handleMenuClose}>Community</MenuItem>
       <MenuItem
         component="a"
         href="https://twitter.com/yourhandle"
@@ -120,11 +120,11 @@ const Layout = () => {
             </Link>
             <Link
               component={RouterLink}
-              to="/license"
+              to="/community"
               underline="none"
               sx={{ fontWeight: 500, color: 'inherit' }}
             >
-              Print License
+              Community
             </Link>
 
             <IconButton

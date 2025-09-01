@@ -10,6 +10,8 @@ import Layout from './components/nav-layout.jsx';
 import ReviewForm  from './pages/ReviewForm.jsx'; 
 import PaymentPage from './pages/paymentPage.jsx';
 import QuotesPage from './components/QuotesPage';
+import Community from './pages/CommunityPage.jsx';
+import CircleRegistration from './pages/CircleRegistrationForm.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,9 +22,11 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/read" element={<PDFViewer />} /> 
         <Route path="/about-author" element={<AboutAuthor />} /> 
+        <Route path="/community" element={<Community />} /> 
         <Route path="/review" element={<ReviewForm />} /> 
         <Route path="/order" element={<PaymentPage />} /> 
         <Route path="/infinite-enterprise/quotes" element={<QuotesPage />} />
+        <Route path="/community/join" element={<CircleRegistration />} />
         </Route>
       </Routes>
     </BrowserRouter>

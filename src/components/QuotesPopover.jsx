@@ -7,11 +7,11 @@ const QuotesPopover = ({ children }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const quotes = [
-    "You weren't meant to replicate what already exists. You were meant to originate.",
-    "You're not here just to make a living. You're here to build something that outlives you.",
-    "The world doesn't need more influencers. It needs architects of eternity.",
-    "Some ideas can live forever — if they're built with the right blueprint.",
-    "You weren't designed to simply function — you were designed to influence."
+    "Trust is the most under-discussed scaling force in business.",
+    "Timeless intelligence means building for legacy, not just leverage.",
+    "If it dies with you, it was never a legacy — only a performance.",
+    "The future won’t be dominated by AI alone — It will be led by those who know how to think clearly, design with depth, and scale with conscience.",
+    "When your idea becomes infrastructure, you don’t need to be present in every room — your design already is.",
   ];
 
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
