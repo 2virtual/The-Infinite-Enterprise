@@ -200,5 +200,16 @@ export const quotes = [
       id: 40,
       text: "The most powerful force in leadership is not charisma. It is integrity lived. And integrity lived cannot be faked. It must be claimed.",
       category: "Integrity"
-    }
+    },
+    {
+      id: 41,
+      text: "One of the greatest challenges in modern enterprise is scale.But here’s the truth:Scale without soul is collapse in slow motion.",
+      category: "Sustainability"
+    },
+    {
+      id: 42,
+      text: "When your purpose drives your power, your vision becomes a system others can expand.",
+      category: "vision"
+    },
   ];
+
