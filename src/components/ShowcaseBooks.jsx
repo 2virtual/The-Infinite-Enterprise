@@ -39,7 +39,7 @@ const ShowcaseBooks = () => {
       {/* Subtitle */}
       <Typography variant="subtitle1" align="center" sx={{ mb: 6, opacity: 0.9 }}>
         Get the <strong>Workbook FREE</strong> when you buy the Main Book for just{' '}
-        <strong>$25</strong>
+        <strong>$4.99</strong>
       </Typography>
 
       {/* Books Grid */}
